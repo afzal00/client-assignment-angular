@@ -1,0 +1,16 @@
+<div id="mySidenav" class="sidenav d-flex flex-column">
+  <div class="text-right">
+  <select class="p-2 mb-3" name="filter" id="filter" #mySelect>
+    <option class="p-2" [value]="''">Combined data</option>
+    <option  class="p-2" [value]="filter.name" *ngFor="let filter of filters">{{filter.name}}
+    </option>
+  </select>
+</div>
+  <!-- <ng-container *ngFor="let filter of filters">
+    <a (click)="filterBy(filter.name)">{{filter.name}}</a>
+  </ng-container> -->
+  <!-- <a (click)="filterBy('')">Reset</a> -->
+  <div class="text-right">
+  <button class="btn btn-primary" (click)="filterBy(mySelect.value)">Apply</button>
+</div>
+</div>
